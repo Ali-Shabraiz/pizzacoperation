@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #processDone{
+    /* width: 200px; */
+    height: 50px;
+    background: red;
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+}
+#processDone.success{
+    background: rgb(0, 255, 21);
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    
+}
+#processDone.remove{
+    animation: removed 5s ease forwards;
+}
+@keyframes removed {
+    95%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        margin-top: 20px;
+    }
+}
+    </style>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../Images/logo.png" alt="logo Image" class="logo bx bx-pizza">
+    </nav>
+    <div class="main">
+        <aside>
+            <ul>
+                <li onclick="activeItem(0,'PHP/allItems')">Items</li>
+                <li onclick="activeItem(1,'PHP/ordersPage')">Orders</li>
+                <li onclick="activeItem(2,'PHP/categoryPage')">Category</li>
+                <li onclick="activeItem(3,'PHP/dealsPage')">Deals</li>
+                <li onclick="activeItem(4,'PHP/settings')">Settings</li>
+            </ul>
+            <span class="icon bx bx-caret-left" onclick="openCloseNavigation(document.querySelector('aside'))"></span>
+        </aside>
+        <section class="dynamicInfo" id="dynamicInfo">
+            <h1>Loading</h1>
+        </section>
+    </div>
+    <footer>&copy; Copy Right protected by Mr. Ali Shabraiz. All rights should be reserved.</footer>
+    <script src="../JS/fetchInitialData.js"></script>
+    <script src="../JS/jquery.js"></script>
+    <script src="../JS/menus.js"></script>
+    <script src="../JS/basicFunction.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+.dynamicInfo {
+    width: 100%;
+    height: calc(94vh - 120px);
+    overflow-y: auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+      /* background-image: url('../Images/p2.jpg'); */
+     /* background-size: cover; */
+    flex-wrap: wrap;
+
+}
+@media (min-width: 1001px) {
+.dynamicInfo{
+    max-height: calc(94vh - 120px);
+}
+    
+}
+
+.dynamicInfo h1 {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'lobster';
+    color: var(--red);
+    -webkit-text-stroke: .1px var(--yellow);
+}
+
+.dynamicInfo form,
+.dynamicInfo .form {
+    display: flex;
+    position: relative;
+    gap: 10px;
+    height: max-content;
+    background: var(--white);
+    border: 3px solid var(--red);
+}
+.dynamicInfo .form {
+    width: calc(100% - 380px);
+    /* backdrop-filter: blur(2px); */
+
+}
+
+.dynamicInfo form{
+    flex-direction: column;
+    min-width: 277px;
+    padding: 10px;
+    border-radius: 10px;
+    /* background: var(--black); */
+    backdrop-filter: blur(4px);
+    
+}
+.dynamicInfo form button,
+.dynamicInfo form select
+{
+    height: 40px;
+    border: none;
+    outline: 3px solid var(--red);
+    background: var(--black5);
+    color: var(--wte);
+}
+.dynamicInfo form button{
+    /* background: var(--wte); */
+    color: red !important;
+}
+
+
+.dynamicInfo form input,
+.dynamicInfo .form input {
+    width: 90%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: none;
+    outline: 3px solid var(--red);
+    color: #fff;
+}
+.dynamicInfo form input{
+    width: 100%;
+    background: var(--black5);
+}
+
+.dynamicInfo form button,
+.dynamicInfo .form button {
+    border-radius: 5px;
+    min-width: 10%;
+    color: var(--wte);
+}
+.dynamicInfo table tr button{
+    border: 2px solid var(--red);
+    padding: 5px;
+}
+
+
+
+.dynamicInfo table {
+    width: 100%;
+    border-spacing: 0;
+    border-color: var(--red);
+}
+.dynamicInfo table tr{
+    backdrop-filter: blur(3px);
+}
+
+.dynamicInfo table tr th,
+.dynamicInfo table tr td {
+    padding: 5px;
+    color: var(--yellow);
+    text-align: center;
+}
+
+
+.dynamicInfo table tr td {
+    font-size: 13px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: var(--wte);
+
+}
+
+.dynamicInfo .form[name="tableForm"] {
+    flex-direction: column;
+    /* background: rgba(0, 0, 0, 0.705); */
+    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid var(--red);
+}
+
+.dynamicInfo .form[name="tableForm"] .searchControls {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: auto;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.dynamicInfo .form[name="tableForm"] .searchControls input {
+    width: 30%;
+    border-radius: 30px;
+    padding-left: 10px;
+    /* font-size: 20px; */
+    outline: 3px solid var(--red);
+    border: none;
+    background: transparent;
+    backdrop-filter: blur(3px);
+    color: var(--wte);
+    height: 30px;
+}
+.dynamicInfo .form[name="tableForm"] .searchControls input::placeholder{
+    color: var(--wte);
+}
+
+
+.dynamicInfo .form[name="tableForm"] .searchControls select {
+    padding: 3px;
+    width: 50px;
+}
+
+.dynamicInfo .form[name="tableForm"] .searchControls .NextPreCon {
+    display: flex;
+    gap: 10px;
+}
+
+.dynamicInfo .form[name="tableForm"] .searchControls button {
+    width: auto;
+    padding: 5px;
+}
+
+.dynamicInfo .form[name="tableForm"] table button {
+    width: auto;
+    /* padding: 3px 10px; */
+    font-size: 0.9em;
+}
+
+.NextPreCon {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 1000px){
+    .dynamicInfo{
+        padding: 5px;
+        flex-direction: column;
+    }
+    .dynamicInfo {
+    max-width: 100%;
+    height: auto !important;
+    max-height: auto !important;
+}
+.dynamicInfo .form {
+    width: 100%;
+}
+
+}
+
+@media (max-width: 786px) {
+   
+
+
+    .dynamicInfo table {
+        max-width: 100%;
+        background: var(--cream);
+        border-spacing: 0;
+        border-color: var(--red);
+    }
+
+    .dynamicInfo table tr td button {
+        margin: 5px;
+    }
+
+    .dynamicInfo form {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .dynamicInfo form input ,
+    .dynamicInfo form button,
+    .dynamicInfo form select
+    {
+        min-width: 100%;
+        height: 40px;
+       
+
+    }
+
+    
+
+    .dynamicInfo .form[name="tableForm"] {
+        padding: 5px 2px;
+    }
+
+    .dynamicInfo .form[name="tableForm"] .searchControls input {
+        min-width: 40%;
+
+    }
+
+    .dynamicInfo .form[name="tableForm"] button {
+        min-width: auto;
+
+    }
+}
+
+tr:nth-child(even){
+    background-color: var(--black5);
+}
+tr:nth-child(odd){
+    background-color: var(--black5);
+}

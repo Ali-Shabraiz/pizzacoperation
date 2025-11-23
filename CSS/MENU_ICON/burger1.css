@@ -1,0 +1,80 @@
+  
+    #menu-icon.burger1 .line:nth-child(1){
+      top: calc(50% - 1.5px);
+      rotate: 45deg;
+      animation: rotation1 0.3s ease forwards,menu-icon-l1 0.15s 0.3s ease forwards;
+    }
+    @keyframes rotation1 {
+      
+      100%{
+          rotate: 0deg;
+      }
+    }
+    @keyframes menu-icon-l1 {
+      100%{
+          top: 0;
+      }
+    }
+    #menu-icon.burger1 .line:nth-child(2){
+      opacity: 0;
+      top: calc(50% - 1.5px);
+      animation: display1 0.05s 0.3s  forwards;
+    }
+    @keyframes display1 {
+      100%{
+          opacity: 1;
+      } 
+    }
+    #menu-icon.burger1 .line:nth-child(3){
+      bottom: calc(50% - 1.5px);
+      rotate: -45deg;
+      animation: rotation1 0.3s ease forwards,menu-icon-l2 0.15s 0.3s ease forwards; 
+    }
+    @keyframes menu-icon-l2 {
+      100%{
+           bottom: 0;
+      }
+    }
+  
+    #menu-icon.cross1 .line:nth-child(1){
+      top: 0;
+     animation: menu-icon-l-1 0.15s ease forwards,rotation-1 0.3s 0.15s ease forwards;
+    }
+    #menu-icon.cross1 .line:nth-child(2){
+      animation: display-1 0.15s forwards;
+      top: calc(50% - 1.5px);
+      
+     }
+    #menu-icon.cross1 .line:nth-child(3){
+      bottom: 0;
+      animation: menu-icon-l-2 0.15s ease forwards,rotation-2 0.3s 0.15s ease forwards;
+     }
+    @keyframes menu-icon-l-1 {
+      100%{
+      top: calc(50% - 1.5px);
+  
+      }
+    }
+    @keyframes rotation-1 {
+      100%{
+         rotate: 45deg;
+      }
+    }
+    @keyframes display-1 {
+      100%{
+      display: none;
+  
+      }
+    }
+    @keyframes menu-icon-l-2 {
+      100%{
+      bottom: calc(50% - 1.5px);
+  
+      }
+    }
+    @keyframes rotation-2 {
+      100%{
+         rotate: -45deg;
+      }
+    }
+  

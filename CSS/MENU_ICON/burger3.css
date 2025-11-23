@@ -1,0 +1,68 @@
+#menu-icon.burger3 .line:nth-child(1){
+    width: 50%;
+    left: -1.5px;
+    rotate: -45deg;
+    top: calc(25% - 1.5px);
+    animation: b3l11 0.3s ease forwards,b3l12 0.3s 0.3s ease forwards;
+}
+@keyframes  b3l11{
+    100%{
+        rotate: 0deg;
+        top: 0;
+    }
+}
+@keyframes  b3l12{
+    100%{
+    left: 0;
+    width: 100%;
+        
+    }
+}
+#menu-icon.burger3 .line:nth-child(3){
+    width: 50%;
+    left: -1.5px;
+    rotate: 45deg;
+    bottom: calc(25% - 1.5px);
+    animation: b3l31 0.3s ease forwards,b3l12 0.3s 0.3s ease forwards;
+}
+@keyframes  b3l31{
+    100%{
+        rotate: 0deg;
+        bottom: 0;
+    }
+}
+
+#menu-icon.cross3 .line:nth-child(1){
+    width: 100%;
+    rotate: 0deg;
+    top: 0;
+    left: 0;
+    animation: c3l11 0.3s ease forwards,c3l12 0.3s 0.3s ease forwards;
+}
+@keyframes c3l11 {
+    100%{
+    width: 50%;
+    left: -1.5px;
+    }
+}
+@keyframes c3l12 {
+    100%{
+        rotate: -45deg;
+    top: calc(25% - 1.5px);
+    }
+}
+
+#menu-icon.cross3 .line:nth-child(3){
+    width: 100%;
+    rotate: 0deg;
+    bottom: 0;
+    left: 0;
+    animation: c3l11 0.3s ease forwards,c3l32 0.3s 0.3s ease forwards;
+}
+
+@keyframes c3l32 {
+    100%{
+    rotate: 45deg;
+    bottom: calc(25% - 1.5px);
+    }
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Coperation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/mogra" rel="stylesheet">
+                <link href="https://fonts.cdnfonts.com/css/nova-slim" rel="stylesheet">
+                
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/hum-burger-and-mobile-menu.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: var(--black);
+
+        }
+
+        :root {
+            --navHeight: 120px;
+        }
+
+        nav {
+            z-index: 99;
+            border-bottom: 0px !important;
+        }
+
+        .landingPage {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            color: #fff;
+            justify-content: center;
+            gap: 10px;
+            /* border-bottom-left-radius: 50%; */
+            /* border-bottom-right-radius:35%; */
+        }
+
+        .landingPage .content {
+            text-align: center;
+            width: 60%;
+            position: relative;
+            /* background: black; */
+            display: flex;
+            /* flex-direction: column; */
+            flex-direction: column;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            padding-left: 20px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .landingPage .content h1 {
+            color: #fff;
+            z-index: 1;
+            width: 100%;
+            /* text-align: center; */
+            font-size: 4em;
+        }
+
+        h1,
+        h2 {
+            font-family: 'lobster';
+
+
+        }
+
+        h2 {
+            color: var(--red);
+        }
+
+        .landingPage .content p {
+            text-align: justify;
+        }
+
+        .landingPage .content .logo {
+            width: 200px;
+        }
+
+        .landingPage nav {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            top: 0;
+            left: 0;
+            height: var(--navHeight) !important;
+            /* background: black; */
+            padding: 10px 20px;
+            backdrop-filter: blur(5px);
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            /* border-bottom: 2px solid var(--cream); */
+            /* border-radius: 50%; */
+
+        }
+
+        .landingPage nav .logo {
+            height: calc(var(--navHeight) - 15px);
+            /* background: #ffffff79; */
+        }
+
+        .landingPage nav .menuItems {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .items .card button {
+            width: 100%;
+            background: var(--red);
+        }
+
+        .products {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+            /* background-image: url("./Images/2025-10-31.webp"); */
+            background: #111;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        .products .items .card {
+            height: auto;
+            backdrop-filter: blur(5px);
+            border: none;
+            box-shadow: none;
+        }
+
+        .products .items .card img {
+            /* width: 150px; */
+            align-self: center;
+            height: 125px;
+        }
+
+        .products .items .card h3 {
+            text-align: justify;
+        }
+
+        .products h2 {
+            width: 100%;
+            font-size: 2.4em;
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            /* border: 2px solid var(--yellow); */
+            transition: 0.2s;
+            font-family: 'lobster';
+            font-size: 1.4em;
+            width: max-content;
+            padding: 5px 20px;
+            border-radius: 50px;
+            -webkit-text-stroke: none;
+            background-color: var(--wte);
+            color: var(--red);            
+        }
+
+        nav ul li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.4s;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        nav ul li a {
+            color: var(--wte);
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        nav ul li.active a {
+            border-color: var(--red);
+            border-top: 2px solid;
+            color: var(--red);
+            border-bottom: 2px solid;
+            border-radius: 40%;
+            font-weight: bold;
+        }
+
+          button.redBtn {
+            width: max-content;
+            align-self: center;
+            box-shadow: 0 0 10px var(--red);
+            font-family: 'lobster';
+            color: #fff;
+            border: none;
+            background: var(--red);
+            
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px var(--red);
+        }
+         ::-webkit-scrollbar {
+       background: transparent;
+       width: 0px;
+   }
+
+
+
+
+        @media (max-width: 786px) {
+            :root {
+                --navHeight: 80px;
+            }
+
+            .landingPage .content p {
+                width: 90%;
+            }
+
+            nav ul {
+                position: fixed;
+                backdrop-filter: blur(5px);
+                /* background: var(--cream); */
+                /* border: 3px solid var(--red); */
+                padding: 10px;
+                left: -100%;
+                top: var(--navHeight);
+                height: calc(100vh - var(--navHeight));
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                z-index: 99;
+            }
+
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid red;
+            }
+
+            nav ul li:has(button) {
+                border: none;
+            }
+
+            nav ul li.active a {
+                border: none;
+                border-right: 2px solid;
+                border-left: 2px solid;
+
+            }
+
+            .products .items {
+                width: 100%;
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+                gap: 20px;
+            }
+
+            .products .items .card img {
+                width: auto;
+                /* height: ; */
+
+            }
+
+        }
+
+        .cart {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--red);
+            right: 20px;
+            bottom: 20px;
+            background-color: var(--red);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 0 10px var(--red);
+            /* background: var(--white); */
+        }
+        #scrollBar{
+            position: absolute;
+            bottom: 0;
+            width: calc(var(--w) * 1%);
+            height: 3px;
+            background: var(--red);
+            left: 0;
+        }
+
+
+        
+    </style>
+ <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(var(--black8),var(--black8)), url("./Images/2025-10-31.webp");
+      background-size: cover;
+    }
+    .swiper-slide h1{
+        font-size: 4em;
+        font-family: "Mogra", Sans-serif;
+    }
+    .swiper-slide p{
+        font-family: 'Nova Slim', sans-serif;
+        font-size: 25px !important;
+                                                
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        color: var(--red) !important;
+    }
+    .swiper-pagination-bullet-active{
+        background: var(--red) !important;
+    }
+  </style>
+<body>
+
+    <section class="landingPage">
+        <nav>
+            <div id="scrollBar"></div>
+            <img data-aos="fade-right" data-aos-duration="1000" src="./Images/logo.png" alt="" class="logo">
+            <ul class="menuItems" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="200">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pages">Pages</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#Contact">Contact US</a></li>
+            </ul>
+            <button class="redBtn" data-aos="fade-left" data-aos-duration="900" data-aos-delay="400">View Cart</button>
+        </nav>
+         <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="--url: './Images/2025-10-31.webp'">
+        <div class="content">
+             <h1>Book a Table</h1>
+            <p>Write someting about book a table.</p>
+            <button class="redBtn">Book IT</button>
+        </div>
+      </div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+    </section>
+
+    <section class="products">
+    </section>
+    <div class="cart bx bx-cart"></div>
+    <script src="./JS/scrollBar.js"></script>
+    <script>
+        function displayItems(data) {
+            var products = document.querySelector('.products')
+            for (var i = 0; i < data.length; i++) {
+                var itemLength = data[i].items.length;
+                if (itemLength) {
+                    var heading = document.createElement('h2');
+                    heading.textContent = `${data[i].Name}`;
+                    products.appendChild(heading);
+                    var itemsContainer = document.createElement('div');
+                    itemsContainer.classList.add('items');
+                    products.appendChild(itemsContainer);
+                    for (var j = 0; j < data[i].items.length; j++) {
+                        var card = document.createElement('div');
+                        card.classList.add('card');
+                        card.innerHTML = `<img src="./adminPages/assets/img/${data[i].items[j].ImagePath}"\>
+                <h3>${data[i].items[j].Name}</h3>
+                <span>Price:- ${data[i].items[j].Price}</span>
+                <button>Add to cart</button>
+                `;
+                        itemsContainer.appendChild(card);
+                    }
+                }
+            }
+        }
+        fetch(`./API/fetch_all_items_cate.php`).then(res => {
+            return res.json();
+        }).then(data => {
+            displayItems(data);
+        });
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
+</body>
+
+</html>

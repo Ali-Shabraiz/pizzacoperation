@@ -1,0 +1,59 @@
+<?php
+include "../../PHP/connect_db.php";
+$date = date("j/m/Y H:iA");
+// Target directory for image upload
+$targetDir = "../assets/img/";
+$imagePath = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['newItemName'];
+    $category = $_POST['category'];
+    $price = $_POST['Price'];
+
+    // Validate and upload the image
+    if (isset($_FILES['itemImage']) && $_FILES['itemImage']['error'] === UPLOAD_ERR_OK) {
+        $tmpName = $_FILES['itemImage']['tmp_name'];
+        $originalName = basename($_FILES['itemImage']['name']);
+        $extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+
+        if (in_array($extension, $allowed)) {
+            // Generate unique filename
+            $uniqueName = uniqid("img_") . "." . $extension;
+            $destination = $targetDir . $uniqueName;
+
+            // Move the uploaded file
+            if (move_uploaded_file($tmpName, $destination)) {
+                $imagePath = $uniqueName; // Save this to DB
+            } else {
+                die("Error moving uploaded image.");
+            }
+        } else {
+            die("Invalid image type. Only JPG, JPEG, PNG, GIF allowed.");
+        }
+    } else {
+           
+        die("Image upload failed. Please select a valid image.");
+    }
+
+    // Insert into DB using prepared statements
+    $stmt = $connection->prepare("INSERT INTO items (Name, Price, Category, Date, ImagePath) VALUES (?, ?, ?, ?, ?)");
+
+    if (!$stmt) {
+        die("Prepare failed: " . $connection->error);
+    }
+
+    $stmt->bind_param("sdsss", $name, $price, $category, $date, $imagePath);
+
+    if ($stmt->execute()) {
+        echo "Item added successfully.";
+    } else {
+        echo "Database error: " . $stmt->error;
+    }
+
+    $stmt->close();
+    $connection->close();
+} else {
+    echo "Invalid request.";
+}
+?>

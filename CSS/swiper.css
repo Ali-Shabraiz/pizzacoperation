@@ -1,0 +1,54 @@
+ .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+    }
+    .swiper-slide h1{
+        font-size: 4em;
+        font-family: "Mogra", Sans-serif;
+    }
+    .swiper-slide p{
+        font-family: 'Nova Slim', sans-serif;
+        font-size: 25px !important;
+                                                
+    }
+    .dimmer{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: var(--black8);
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-next, .swiper-button-prev{
+        color: var(--red) !important;
+    }
+    .swiper-pagination-bullet-active{
+        background: var(--red) !important;
+    }
+    @media (max-width: 800px) {
+    .swiper-slide h1{
+        font-size: 2.4em !important;
+    }
+    .swiper-slide p{
+        font-size: 15px !important;
+    }
+    .dimmer{
+        background: var(--black5);
+    }
+
+    }

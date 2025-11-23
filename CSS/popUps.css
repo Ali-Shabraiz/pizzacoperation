@@ -1,0 +1,78 @@
+#deleteBox,
+#editBox {
+    position: fixed;
+    width: 400px;
+    right: -100%;
+    height: 100%;
+    background: #0000002f;
+    backdrop-filter: blur(2px);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+#deleteBox.active,
+#editBox.active {
+    right: 0px;
+}
+
+#deleteBox .box,
+#editBox .box {
+    width: 300px;
+    height: auto;
+    background: var(--white);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+
+#deleteBox .box p {
+    margin: 5px;
+}
+
+#editBox .box input,
+#editBox .box select {
+    width: 100%;
+    border-radius: 10px;
+    /* margin: 10px; */
+    height: 40px;
+    padding-left: 10px;
+}
+
+#deleteBox .box button,
+#editBox .box button {
+    /* min-width: 100px; */
+    width: 45%;
+    
+    height: 25px;
+}
+
+@media (max-width: 786px) {
+    #deleteBox,
+#editBox {
+    width: 100%;
+}
+#deleteBox .box,
+#editBox .box {
+    width: 90%;
+}
+#deleteBox .box button,
+#editBox .box button{
+    height: 40px;
+    
+}
+    
+}
+
+#deleteBox .box button:nth-child(2),
+#editBox .box button:nth-child(2){
+    background: var(--tomatoRed);
+}
+

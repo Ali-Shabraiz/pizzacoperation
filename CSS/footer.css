@@ -1,0 +1,14 @@
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background: var(--black);
+    color: var(--yellow);
+    outline: 2px solid var(--yellow);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
